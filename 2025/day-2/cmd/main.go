@@ -16,7 +16,8 @@ func check(e error, info string) {
 }
 
 func parseInt(input string) int {
-	intValue, _ := strconv.Atoi(input)
+	intValue, err := strconv.Atoi(input)
+	check(err, "Fail to parse int")
 	return intValue
 }
 
